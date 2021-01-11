@@ -1,0 +1,47 @@
+#1 slide
+Goodmorning .... our team worked on the autoencoder's project applied to financial data.
+
+#2 slide
+An autoencoder is a neural network that is trained to attempt to copy its input to its output. Internally, it has
+a hidden layer h that describes a code used to represent the input. If we call the Hidden layer h
+• then the AE has Two parts
+– Encoder h= f(x) where x is the input
+– Decoder r=g(h) where h is the code
+
+They may be trained with the same techniques as other NN,
+so typically minibatch gradient descent and by back-propagation.
+
+One of their application is dimensionality reduction which facilitates the
+classification, visualization and storage of high-dimensional
+data. A simple and widely used method is principal components analysis (PCA), which
+finds the directions of greatest variance in the dataset and represents each data point by its
+coordinates along each of these directions.
+
+A common type of autoencoder is Undercomplete autoencoder
+it has the characteristic to constrain the code to have smaller dimension than the input
+• Learning an undercomplete representation forces the
+autoencoder to capture the most salient features of the training data.
+• The learning process is described simply as minimizing some loss function
+• When the decoder is linear and the loss is the mean squared
+error, an undercomplete autoencoder learns to span the same subspace as PCA.
+• Instead Autoencoders with nonlinear encoder functions and nonlinear decoder functions
+can therefore learn a more powerful nonlinear generalization of PCA.
+• although if the encoder and decoder are allowed too much capacity, the autoencoder can learn to
+perform the copying task without extracting any useful information about the distribution of the data.
+• If the input were completely random, the task would be very difficult for the autoencoderb ut if there is structure in the data, 
+for example, if some of the input features are correlated, then this algorithm can discover some of those correlations. 
+
+The simplest form of an autoencoder is a feedforward neural network similar to a single layer perceptron
+having an input layer, an output layer and one hidden layers connecting them
+where the output layer has the same number of nodes (neurons) as the input layer.
+
+#3third slide
+using deep encoders and decoders can offer many advantages such as:
+exponentially reduce the computational cost of representing some functions.
+exponentially decrease the amount of training data needed to learn some functions.
+Experimentally, deep autoencoders yield better compression compared to shallow auto-encoders or linear autoencoders.
+
+Using the yfinance library we collected 10 Hotel services stocks, normalized them which is a necessary pre-step for PCA, 
+then applied a log transformation of the data as it is commonly done with financial data and used as loss function the Mean Squared Error.
+
+
